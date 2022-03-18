@@ -1,0 +1,33 @@
+.home{
+    width: 100%;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.home .container{
+    display: flex;
+    position: relative;
+}
+.home .container .showlist-icon{
+    display: none;
+    position: fixed;
+    color: #fff;
+    top: 77px;
+    left: 0;
+    font-size: 2rem;
+    background: rgba(0,0,0,0.2);
+    width: 100px;
+    height: 50px;
+    border-bottom-right-radius: 100px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.home .container .showlist-icon:hover{
+    background: rgba(0,0,0,0.9);
+}
+
+@media screen and (max-width:1000px) {
+    .home .container .showlist-icon{
+        display: block;
+        z-index: 10;
+    }
+}

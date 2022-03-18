@@ -1,0 +1,22 @@
+.footer{
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+}
+.footer-list{
+    display: flex;
+    gap: 50px;
+}
+.footer-item{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding: 20px;
+}
+.footer .copy-right p{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}

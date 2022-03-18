@@ -1,0 +1,16 @@
+.listproducts {
+    display: flex;
+    flex-direction: column;
+}
+.listproducts ul{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+}
+.listproducts .li{
+    color: #aaa;
+}
+.listproducts ul li{
+    cursor: pointer;
+}

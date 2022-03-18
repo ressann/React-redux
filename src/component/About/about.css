@@ -1,0 +1,33 @@
+.about {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+.about .about-logo img{
+    width: 500px;
+    height: calc(100vh - 200px);
+    object-fit: cover;
+}
+.about .about-header{
+    padding: 50px;
+    padding-left: 200px;
+    width: 1200px;
+    background: lightgoldenrodyellow;
+    font-family: 'Open Sans', sans-serif;
+}
+.about-us{
+    display: flex;
+    gap: 20px;
+}
+.about-us .about-details{
+    height: calc(100vh - 200px);
+    padding-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}

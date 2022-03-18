@@ -1,0 +1,73 @@
+.leftside{
+    flex: 1.5;
+    padding: 20px;
+    color: #aaa;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: calc(100vh - 76px);
+    overflow-y: scroll;
+    position: sticky;
+    top:76px ;
+}
+.header-leftside{
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    color: black;
+    justify-content: center;
+    animation: effect 5s infinite;
+}
+.leftside .leftside-icon{
+    font-size: 1.5rem;
+    animation: effect 5s infinite;
+}
+@keyframes effect {
+    from,to{color: red;}
+    20% {color:lightblue;}
+    50% {color: aqua;}
+    80% {color: gray;}
+    100% {color: pink;}
+}
+
+.leftside .search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftside .search input{
+    padding: 15px;
+    width: 95%;
+    outline: none;
+    border:1px solid lightblue;
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+.leftside .search input:hover{
+    animation: bordereff 5s infinite;
+}
+@keyframes bordereff {
+    from,to{border:1px solid  red;}
+    20% {border:1px solid green;}
+    50% {border:1px solid  aqua;}
+    80% {border:1px solid  gray;}
+    100% {border:1px solid  pink;}
+}
+
+@media screen and (max-width:1000px) {
+    .leftside {
+        position: fixed;
+        top: 76px;
+        left: -289px;
+        opacity: 0;
+        transition: all 1s ease;
+        background-color: rgba(0,0,0,0.9);
+    }
+    .leftside.active{
+        left: 0;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,123 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+ul{
+    list-style: none;
+}
+.li{
+    color: #fff;
+    text-decoration: none;
+}
+
+/*nav right side*/
+.nav-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav-list{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav-icons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.nav-right .line-icon{
+    display: none;
+}
+.nav-right .li{
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.nav-right .li:hover{
+    text-decoration: underline;
+    animation: navlist 15s infinite;
+}
+.nav-right .shopping-icon:hover{
+    animation: wheelHueColor 15s infinite;
+}
+.nav-icons sup{
+    color: red;
+}
+
+/*nav left side*/
+.nav-left .knife-icon{
+    font-size: 2rem;
+    cursor: pointer;
+    animation: wheelHueColor 10s infinite;
+}
+@keyframes wheelHueColor {
+    from, to { color: rgb(236,100,75); }
+    10%      { color: rgb(219,10,91); }
+    20%      { color: rgb(204, 168, 211); }
+    30%      { color: rgb(89,171,227); }
+    40%      { color: rgb(37,116,169); }
+    50%      { color: rgb(3,201,169); }
+    60%      { color: rgb(22,160,133); }
+    70%      { color: rgb(233,212,96); }
+    80%      { color: rgb(243,156,18); }
+    90%      { color: rgb(236,240,241); }
+}
+@keyframes navlist {
+    from, to { color: lightblue; }
+    10%      { color: lightcoral; }
+    20%      { color: lightcyan; }
+    30%      { color: lightgoldenrodyellow; }
+    40%      { color: lightgray; }
+    50%      { color: lightgreen; }
+    60%      { color: lightpink; }
+    70%      { color: lightsalmon; }
+    80%      { color: lightseagreen; }
+    90%      { color: lightskyblue; }
+}
+@media screen and (max-width:520px) {
+    .nav-icons .line-icon{
+        display: block;
+    }
+    .nav-icons .line-icon:hover{
+        animation: wheelHueColor 10s infinite;
+    }
+    .nav-list{
+        position: absolute;
+        top: 77px ;
+        background-color: lightblue;
+        right: -300px;
+        opacity: 0;
+        flex-direction: column;
+        width: 300px;
+        gap: 3px;
+        border-bottom-left-radius: 20px;
+        transition: all 1s ease;
+    }
+    .nav-list.active{
+        right: 0;
+        opacity: 1;
+    }
+    .nav-list .li{
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        transition: background 1s ease;
+        z-index: 9;
+    }
+    .nav-list .li:hover{
+        background: rgba(0,0,0,0.9);
+        text-decoration: none;
+    }
+    .nav-list .li:last-child{
+        border-bottom-left-radius: 20px;
+    }
+}
