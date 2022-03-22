@@ -4,8 +4,11 @@ import Items from '../Items/Items'
 import { Route, Routes } from 'react-router-dom'
 import About from '../About/About'
 import Footer from '../../Footer/Footer'
+import Cart from '../Cart/Cart'
+import Order from '../Order/Order'
 
 const RightSideBar = () => {
+
   const [items,setItems]=useState([
     {
       id:1,
@@ -84,6 +87,8 @@ const RightSideBar = () => {
         <Route path='/' element={<Items items={items}/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/products' element={<Items items={items}/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/order/:id' element={<Order order={items}/>}/>
       </Routes>
       <Footer/>
     </div>

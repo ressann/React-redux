@@ -1,0 +1,47 @@
+.order .order-list img{
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.order-list {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding:50px 0;
+}
+.order-list form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.order .order-header{
+    background-color: lightgoldenrodyellow;
+    width: 100%;
+    padding: 50px;
+    padding-left: 200px;
+}
+.order-number input{
+    width: 50px;
+    outline: none;
+}
+
+.order .order-list button{
+    padding: 10px;
+    border: none;
+    background-color: lightgray;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    transition: all .5s ease;
+}
+.order .order-list button:hover{
+    background-color: rgba(0,0,0,0.9);
+}

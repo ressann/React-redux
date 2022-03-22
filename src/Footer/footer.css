@@ -8,6 +8,8 @@
 .footer-list{
     display: flex;
     gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .footer-item{
     display: flex;
