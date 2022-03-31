@@ -2,6 +2,7 @@ import './leftsidebar.css'
 import React from 'react'
 import {ImSpoonKnife} from 'react-icons/im'
 import ListProducts from '../ListProducts/ListProducts'
+import Search from '../../SearchBar/Search'
 
 const LeftSideBar = ({active}) => {
   return (
@@ -10,9 +11,7 @@ const LeftSideBar = ({active}) => {
             <ImSpoonKnife className='leftside-icon'/>
             <h2>List Of Product</h2>
         </div>
-        <div className='search'>
-            <input type="text" name='search' placeholder='Search' />
-        </div>
+        <Search/>
         <ListProducts/>
     </div>
   )

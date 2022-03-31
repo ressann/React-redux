@@ -121,3 +121,16 @@ ul{
         border-bottom-left-radius: 20px;
     }
 }
+
+.logout .btn-logout{
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 3px 10px;
+    background-color: lightblue;
+    cursor: pointer;
+    color: #fff;
+    transition: all .5s ease;
+}
+.btn-logout:hover{
+    color: red;
+}

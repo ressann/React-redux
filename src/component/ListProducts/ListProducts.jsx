@@ -6,16 +6,10 @@ const ListProducts = () => {
   return (
     <div className='listproducts'>
         <ul>
-            <Link to={'/'} className='li'>Khmer Food</Link>
-            <Link to={'/'} className='li'>Italy Food</Link>
-            <Link to={'/'} className='li'>Breackfirst</Link>
-            <Link to={'/'} className='li'>Snacks</Link>
-            <Link to={'/'} className='li'>Drinks</Link>
-            <Link to={'/'} className='li'>Khmer Food</Link>
-            <Link to={'/'} className='li'>Italy Food</Link>
-            <Link to={'/'} className='li'>Breackfirst</Link>
-            <Link to={'/'} className='li'>Snacks</Link>
-            <Link to={'/'} className='li'>Drinks</Link>
+            <Link to={'/?type=khmer food'} className='li'>Khmer Food</Link>
+            <Link to={'/?type=italy_food'} className='li'>Italy Food</Link>
+            <Link to={'/?type=thai food'} className='li'>Thai Food</Link>
+            <Link to={'/?type=india'} className='li'>Indian Food</Link>
         </ul>
     </div>
   )

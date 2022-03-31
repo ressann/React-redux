@@ -1,0 +1,51 @@
+.register{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    gap: 20px;
+}
+.register-header{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+.register-form input{
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+.check-password{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.btn-register{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #aaa;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+.btn-register:hover{
+    background-color: rgba(0,0,0,0.9);
+    color: #fff;
+}
+.sing-in{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}

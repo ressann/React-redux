@@ -4,44 +4,63 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addCart,carts } from '../../features/Cart/CartSlide'
 
-const Order = ({order}) => {
+
+const Order = () => {
     const Carts=useSelector(carts)
     const param = useParams()
-    const id = param.id -1
+    const id = param.id
     const [total,setTotal]=useState(0)
     const [quantity,setQuantity]=useState(0)
     const dispatch = useDispatch()
 
     useEffect(()=>{
         const sumTotal =()=>{
-            setTotal(quantity*order[id].price)
+            setTotal(quantity*products[0].price)
         }
         sumTotal()
 
     },[quantity])
-    console.log(Carts)
+
     const handleOrder=(e)=>{
         e.preventDefault()
         dispatch(addCart({
-            title:order[id].title,
-            img:order[id].img,
-            price:order[id].price,
+            title:products[0].title,
+            img:products[0].image,
+            price:products[0].price,
             quantity:quantity,
             total:total,
             id:Math.random(),
         }))
     }
+
+    const products = useSelector(state=>state.product.products)
+    const [indexPro,setIndexPro]=useState(null)
+
+    useEffect(()=>{
+        const getOrder = ()=>{
+            products.map((item,index)=>{
+                if(item._id === id){
+                    setIndexPro(index)
+                    if(indexPro !=null){
+                        return indexPro
+                    }
+                }
+            })
+        }
+        getOrder()
+    },[id])
+
   return (
     <div className='order'>
         <div className='order-header'>
             <h1>Get Order The Food</h1>
         </div>
-        {order[id] && 
+        {products[indexPro] && 
         <div className='order-list'>
-            <img src={order[id].img} alt="" />
+            <img src={products[indexPro].image} alt="" />
             <form>
-                <h2>{order[id].title}</h2>
-                <p>Price : {order[id].price}$</p>
+                <h2>{products[indexPro].title}</h2>
+                <p>Price : {products[indexPro].price}$</p>
 
                 <div className='order-number'>
                     <label htmlFor="quantity">Quantity : </label>

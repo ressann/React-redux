@@ -1,0 +1,69 @@
+.admin {
+    overflow-x: hidden;
+}
+.admin .container{
+    display: flex;
+}
+
+.admin nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.9);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.admin nav ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.admin nav ul li{
+    cursor: pointer;
+    position: relative;
+}
+.admin nav ul li img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.admin nav ul .icons .setting{
+    position: absolute;
+    background-color: #aaa;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    top: -110px;
+    transition: all .7s ease;
+}
+.admin nav ul .icons .setting button {
+    border: none;
+    padding: 0 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+.admin nav ul .icons .setting button:hover{
+    background-color: rgba(0,0,0,0.9);
+    color: #fff;
+}
+.arr-icon{
+    transform: scale(-1);
+}
+.admin nav ul .icons:hover .arr-icon{
+    transform: scale(1);
+}
+.admin nav ul .icons:hover .setting{
+    opacity: 1;
+    overflow: visible;
+    top: 20px;
+}
