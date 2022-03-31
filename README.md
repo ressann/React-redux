@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - Node install on your pc
   - postman
   - Mongodb
+  - to connect to your mongodb you go to .env file on react-redux folder and change DB_CONNECTION to your mongodb connection.
   - get backend server on my github account and clone or download my repo name Server-react-redux and then run it on your pc.  
   - clone this repo take on your pc and run command
   - #### npm install to install all package.
