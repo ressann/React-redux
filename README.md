@@ -7,8 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - postman
   - get backend server on my github account name Server-react-redux  clone or download it take on your pc. 
   - clone this repo take on your pc and run command 
-   ### npm install 
-   to install all package.
+    #### npm install 
+    to install all package.
 
 In the project directory, you can run:
 
