@@ -2,6 +2,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+**requirement to start with this project : 
+  - Node install on your pc
+  - postman
+  - Mongodb
+  - get backend server on my github account and clone or download my repo name Server-react-redux and then run it on your pc.  
+  - to connect to your mongodb you go to .env file on server folder that you clone from my repo name backend-server-react-redux and change DB_CONNECTION to your mongodb connection.
+  - clone this repo take on your pc and run command
+  - #### npm install to install all package.
+
 In the project directory, you can run:
 
 ### `npm start`
