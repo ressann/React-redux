@@ -9,10 +9,11 @@ import AllFood from '../AllFood/AllFood'
 import Page from '../Page/Page'
 import Searchpage from '../../SearchBar/SearchPage/Searchpage'
 
+
 const RightSideBar = () => {
 
   return (
-    <div className='rightside'>
+      <div className='rightside'>
       <Routes>
         <Route path='/' element={<Page/>}/>
         <Route path='/about' element={<About/>}/>

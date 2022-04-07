@@ -9,30 +9,9 @@ const Order = () => {
     const Carts=useSelector(carts)
     const param = useParams()
     const id = param.id
-    const [total,setTotal]=useState(0)
+    const [totalPrice,setTotalPrice]=useState(0)
     const [quantity,setQuantity]=useState(0)
     const dispatch = useDispatch()
-
-    useEffect(()=>{
-        const sumTotal =()=>{
-            setTotal(quantity*products[0].price)
-        }
-        sumTotal()
-
-    },[quantity])
-
-    const handleOrder=(e)=>{
-        e.preventDefault()
-        dispatch(addCart({
-            title:products[0].title,
-            img:products[0].image,
-            price:products[0].price,
-            quantity:quantity,
-            total:total,
-            id:Math.random(),
-        }))
-    }
-
     const products = useSelector(state=>state.product.products)
     const [indexPro,setIndexPro]=useState(null)
 
@@ -50,6 +29,19 @@ const Order = () => {
         getOrder()
     },[id])
 
+    const handleOrder=(e)=>{
+        e.preventDefault()
+        dispatch(addCart({
+            title:products[indexPro].title,
+            img:products[indexPro].image,
+            price:products[indexPro].price,
+            quantity:quantity,
+            totalPrice:totalPrice,
+            id:Math.random(),
+        }))
+    }
+    
+
   return (
     <div className='order'>
         <div className='order-header'>
@@ -66,14 +58,17 @@ const Order = () => {
                     <label htmlFor="quantity">Quantity : </label>
                     <input type="number" name='quantity' id='quantity'
                     min={0}
-                        onChange={(e)=>setQuantity(e.target.value)}
+                        onChange={(e)=>{
+                            setQuantity(e.target.value)
+                            setTotalPrice(e.target.value * products[indexPro].price )
+                        }}
                     />
                 </div>
 
-                <p>Total Price : {total}$</p>
+                <p>Total Price : {totalPrice}$</p>
 
                 <button 
-                    disabled={total ===0 ? true:false}
+                    disabled={totalPrice ===0 ? true:false}
                     onClick={(e)=>handleOrder(e)}
                 >Get Order</button>
             </form>

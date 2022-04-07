@@ -1,31 +1,44 @@
 import './cart.css'
 import React, { useEffect, useState } from 'react'
 import { carts } from '../../features/Cart/CartSlide'
-import { useSelector } from 'react-redux'
-import StripeCheckout from 'react-stripe-checkout';
+import { addOrder } from '../../features/customerOrder/orderSlide'
+import { useSelector,useDispatch } from 'react-redux'
+import { resetCart } from '../../features/Cart/CartSlide'
+import {useNavigate} from 'react-router-dom'
+//import emailjs from '@emailjs/browser';
 
 const Cart = () => {
   const Carts = useSelector(carts)
-
-  // const handleToken = async (token,address)=>{
-  //   console.log(token,address)
-  // }
-  // const [product]= useState({
-  //   name:'Khmer Food',
-  //   price:20,
-  // })
+  const dispatch = useDispatch()
   const [SumTotal,setSumTotal]=useState(0)
+  const user = useSelector(state=>state.auth.user)
+  const navigate = useNavigate()
 
   useEffect(()=>{
     const Sum = ()=>{
       let total =0
       Carts.map(item=>{
-        total= total + item.total
+        total= total + item.totalPrice
         setSumTotal(total)
       })
     }
     Sum()
   },[Carts])
+
+
+  const handleClick = ()=>{
+    dispatch(addOrder({
+      customer:user.info,
+      order:Carts,
+      totalPrice:SumTotal
+    }))
+
+    // emailjs.sendForm('service_2zjycvp', 'template_gfn6mmb', {order:'get order'}, 'tBloH4rzRZk_fzwcb')
+
+    alert('thanks for order.')
+    dispatch(resetCart())
+    navigate('/')
+  }
 
   return (
     <div className='cart'>
@@ -40,7 +53,7 @@ const Cart = () => {
               <th>Name</th>
               <th>Price</th>
               <th>Quantity</th>
-              <th>Total</th>
+              <th>Total Price</th>
             </tr>
 
             {Carts && Carts.map(item=>(
@@ -49,7 +62,7 @@ const Cart = () => {
                 <td><h4>{item.title}</h4></td>
                 <td>${item.price}</td>
                 <td>{item.quantity}</td>
-                <td>${item.total}</td>
+                <td>${item.totalPrice}</td>
               </tr>
             ))}
 
@@ -62,15 +75,11 @@ const Cart = () => {
             <p>Discount : $0.00</p>
             <p>Total : ${SumTotal}</p>
           </div>
-          <button className='btn-checkout'>CHECKOUT NOW</button>
+          <button className='btn-checkout'
+            disabled={Carts.length>0 ? false : true}
+            onClick={handleClick}
+          >CHECKOUT NOW</button>
           <div>
-            {/* <StripeCheckout
-              stripeKey='pk_test_51KgK2pJxTIaiKqvfixE2SKoOrj6xOvGhE1nuPEUN6Gf2dYni1Cuc12RGdwM0ZO224sCSxNOBt8nARFJgvM05Ej2i005hQCbjKZ'
-              token={handleToken}
-              billingAddress
-              shippingAddress
-              amount={product.price}
-            /> */}
           </div>
         </div>
       </div>

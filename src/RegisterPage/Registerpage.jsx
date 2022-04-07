@@ -46,7 +46,7 @@ const Registerpage = () => {
     }
 
     dispatch(reset())
-    console.log('testing')
+
   },[user,isLoading,isError,isSuccess,message,navigate,dispatch])
 
   const {username,email,password,password2}= formData

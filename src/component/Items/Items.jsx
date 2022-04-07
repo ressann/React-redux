@@ -5,7 +5,6 @@ import { useNavigate} from 'react-router-dom'
 const Items = ({products}) => {
     const navigate = useNavigate()
     const handleOrder = (id)=>{
-        console.log('order by ',id)
         navigate(`/order/${id}`)
     }
   return (
@@ -13,7 +12,7 @@ const Items = ({products}) => {
         {products && products.map(item=>{
             return (
 
-             <div className='item' key={item._id} >
+             <div className='item' key={item._id}>
                  <img className='image' src={item.image} alt="" />
                  <div className='info-item'>
                      <h4>{item.title}</h4>
